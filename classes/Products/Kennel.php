@@ -9,6 +9,7 @@ class Kennel extends Products {
 
     function __construct($size , $material)
     {
+        parent::__construct();
         $this->size = $size;
         $this->material = $material;
 

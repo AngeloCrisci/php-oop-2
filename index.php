@@ -32,5 +32,9 @@
     </head>
 
 <body>
+    
+    <h1 class="text-center">MY SHOP</h1>
+
+
 </body>
 </html>

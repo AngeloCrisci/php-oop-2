@@ -9,6 +9,7 @@ class Products {
     public float  $price;
     public string $imageUrl;
     public string $description;
+    public Category $category;
     public string $icon;
 
     function __construct( string $name , float $price , string $imageUrl , string $description , string $icon )
@@ -18,6 +19,10 @@ class Products {
         $this->imageUrl = $imageUrl;
         $this->description = $description;
         $this->icon = $icon;
+    }
+
+    public function getInfo(){
+        
     }
 
 }
