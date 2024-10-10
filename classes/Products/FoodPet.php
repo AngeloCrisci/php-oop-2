@@ -2,6 +2,7 @@
 
 class FoodPet extends Products {
 
+    public static $product_type = 'Cibo';
     public $state;
     public $nutritional_value;
     public $expiration_date;

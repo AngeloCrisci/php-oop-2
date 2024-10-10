@@ -1,11 +1,15 @@
 <?php
 
+require_once __DIR__ . "/db.php";
 
 
 
 
-
-
+$products = [
+    $product_1,
+    $product_2,
+    $product_3,
+    ]
 
 
 
@@ -32,9 +36,54 @@
     </head>
 
 <body>
-    
-    <h1 class="text-center">MY SHOP</h1>
 
+    <h1 class="text-center">MY SHOP</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <?php foreach($products as $product) { ?>
+            <div class="card col-4 h100">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <?= $product->name  ?>
+                    </h5>
+                    <h5 class="card-title">
+                        <?= $product->$product_type  ?>
+                    </h5>
+                    <p class="card-text">
+                        Prezzo : <strong><?= $product->price  ?></strong>
+                    </p>
+                    <p class="card-text">
+                       Descrizione <strong><?= $product->description ?></strong>
+                    </p>
+                    <p class="card-text">
+                       Per: <strong><?= $product->category ?></strong>
+                    </p>
+                    <?php if ($product->product_type === 'Cibo') { ?>
+
+                       <p class="card-text"> Tipologia: <strong><?= $product->state ?></strong></p>
+                       <p class="card-text"> Valori Nutrizionali: <strong><?= $product->nutritional_vale ?></strong></p>
+                       <p class="card-text"> Durata: <strong><?= $product->expiration_date ?></strong></p>  
+
+                    <?php  if  ($product_type === 'Giocattoli') { ?>
+
+                        <p class="card-text"> Resistenza: <strong><?= $product->durability  ?></strong> </p>
+                     <?php } ?>
+
+
+                  <?php } ?>   
+                  <?php  if  ($product_type === 'Cucce') { ?>
+
+                    <p class="card-text"> Grandezza : <strong><?= $product->size  ?></strong> </p>
+                    <p class="card-text"> Materiali : <strong><?= $product->material  ?></strong> </p>
+
+                <?php } ?>
+                    
+                    
+                </div>
+            </div>
+        <?php } ?>    
+        </div>
+    </div>
 
 </body>
 </html>
