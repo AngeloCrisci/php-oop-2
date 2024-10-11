@@ -68,8 +68,13 @@ $products = [
                     <p class="card-text"> Grandezza : <strong><?= $product->size  ?></strong> </p>
                     <p class="card-text"> Materiali : <strong><?= $product->material  ?></strong> </p>
                 <?php } ?>
-                    
-                    
+                    <p class="card-text"> <?php
+                    try { 
+                        echo $product->getAviability();
+                    } catch(Exception $e) {
+                        echo $e->getMessage();
+                    } ?></p> 
+
                 </div>
             </div>
         <?php } ?>    
