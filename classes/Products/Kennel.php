@@ -1,7 +1,10 @@
 <?php 
 
+require_once __DIR__ . '../../../Traits/Aviable.php';
 
 class Kennel extends Products {
+
+    use Aviability;
 
 
     public static $product_type = 'Cucce';
