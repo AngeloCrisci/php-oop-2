@@ -47,7 +47,7 @@ $products = [
                         <?= $product->name  ?>
                     </h5>
                     <h5 class="card-title">
-                        <?= $product->$product_type  ?>
+                        <?=   get_class($product)  ?>
                     </h5>
                     <p class="card-text">
                         Prezzo : <strong><?= $product->price  ?></strong>
@@ -56,26 +56,17 @@ $products = [
                        Descrizione <strong><?= $product->description ?></strong>
                     </p>
                     <p class="card-text">
-                       Per: <strong><?= $product->category ?></strong>
+                       Per: <strong><?= $product->category->type ?></strong>
                     </p>
-                    <?php if ($product->product_type === 'Cibo') { ?>
-
+                    <?php if ($product instanceof FoodPet) { ?>
                        <p class="card-text"> Tipologia: <strong><?= $product->state ?></strong></p>
-                       <p class="card-text"> Valori Nutrizionali: <strong><?= $product->nutritional_vale ?></strong></p>
+                       <p class="card-text"> Valori Nutrizionali: <strong><?= $product->nutritional_value ?></strong></p>
                        <p class="card-text"> Durata: <strong><?= $product->expiration_date ?></strong></p>  
-
-                    <?php  if  ($product_type === 'Giocattoli') { ?>
-
+                    <?php }  else if  ($product instanceof Toys) { ?>
                         <p class="card-text"> Resistenza: <strong><?= $product->durability  ?></strong> </p>
-                     <?php } ?>
-
-
-                  <?php } ?>   
-                  <?php  if  ($product_type === 'Cucce') { ?>
-
+                     <?php }  else if  ($product instanceof Kennel ) { ?>
                     <p class="card-text"> Grandezza : <strong><?= $product->size  ?></strong> </p>
                     <p class="card-text"> Materiali : <strong><?= $product->material  ?></strong> </p>
-
                 <?php } ?>
                     
                     
