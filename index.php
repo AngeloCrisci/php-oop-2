@@ -61,7 +61,7 @@ $products = [
                     <?php if ($product instanceof FoodPet) { ?>
                        <p class="card-text"> Tipologia: <strong><?= $product->state ?></strong></p>
                        <p class="card-text"> Valori Nutrizionali: <strong><?= $product->nutritional_value ?></strong></p>
-                       <p class="card-text"> Durata: <strong><?= $product->expiration_date ?></strong></p>  
+                       <p class="card-text"> Scadenza: <strong><?= $product->expiration_date ?></strong></p>  
                     <?php }  else if  ($product instanceof Toys) { ?>
                         <p class="card-text"> Resistenza: <strong><?= $product->durability  ?></strong> </p>
                      <?php }  else if  ($product instanceof Kennel ) { ?>
